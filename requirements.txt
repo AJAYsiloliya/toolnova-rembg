@@ -1,4 +1,4 @@
-rembg
+rembg[cpu]
 fastapi
 uvicorn
 python-multipart
