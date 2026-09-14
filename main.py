@@ -4,6 +4,10 @@ from rembg import remove
 
 app = FastAPI()
 
+@app.get("/")
+def home():
+    return {"status": "ToolNova rembg is running"}
+
 @app.post("/remove")
 async def remove_background(file: UploadFile = File(...)):
     input_data = await file.read()
@@ -13,4 +17,3 @@ async def remove_background(file: UploadFile = File(...)):
         content=output_data,
         media_type="image/png"
     )
-  
